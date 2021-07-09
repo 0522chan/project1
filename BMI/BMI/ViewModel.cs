@@ -57,6 +57,7 @@ namespace BMI.ViewModel
         }
         private void OnResultChanged()
         {
+            //기능적 코드 추가
             const double num = 0.0001;
             double rate = Weight / ((Tall * Tall) * num);
 

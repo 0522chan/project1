@@ -13,11 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+//<<<권장하는 단계>>>
+//1.ViewModel을 생성한다.
+//2.ViewModel이 노출해야 하는 속성을 찾는다.
+//3.알림 속성을 코딩한다.
+//4.ViewModel을 View의 DataContext로 사용한다.
+//5.View를 ViewModel에 데이터 바인딩한다.
+//6.기능적 논리를 코딩한다.(3단계 이후에 언제든지 수행 가능)
+
 namespace BMI
 {
-    /// <summary>
-    /// MainWindow.xaml에 대한 상호 작용 논리
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()

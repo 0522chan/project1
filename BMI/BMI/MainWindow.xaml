@@ -20,5 +20,6 @@
         <Button Content="측정" HorizontalAlignment="Left" Margin="295,319,0,0" VerticalAlignment="Top" Width="75" Command="{Binding DelegateCommand}"/>
         <TextBlock HorizontalAlignment="Left" Margin="113,181,0,0" TextWrapping="Wrap" Text="tall(키)" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="338,181,0,0" TextWrapping="Wrap" Text="weight(몸무게)" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="BMI 측정기" FontSize="40" VerticalAlignment="Top" RenderTransformOrigin="-0.763,-1.539" Margin="253,46,0,0" />
     </Grid>
 </Window>
