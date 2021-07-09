@@ -8,7 +8,8 @@ using System.Windows.Input;
 using BMI.Model;
 using BMI.Command;
 
-namespace BMI.ViewModel
+namespace BMI.ViewModel   
+
 {
     //INotifyPropertyChanged 인터페이스 구현(속성 변경 이벤트)
     public class Notifier : INotifyPropertyChanged
@@ -22,19 +23,18 @@ namespace BMI.ViewModel
             }
         }
     }
+
     //코드 알림 속성  
     public class ConverterViewModel : Notifier
     {
         Person _person = new Person();
+
         public double Weight
         {
             get { return _person.Weight; }
             set
             {
                 _person.Weight = value;
-                OnPropertyChanged("Weight");
-
-
             }
         }
         public double Tall
@@ -43,7 +43,6 @@ namespace BMI.ViewModel
             set
             {
                 _person.Tall = value;
-                OnPropertyChanged("Tall");
             }
         }
         public string Result
@@ -55,6 +54,8 @@ namespace BMI.ViewModel
                 OnPropertyChanged("Result");
             }
         }
+
+
         private void OnResultChanged()
         {
             //기능적 코드 추가
@@ -78,6 +79,7 @@ namespace BMI.ViewModel
                 Result = "비만";
             }
         }
+
         //ICommand 
         public ICommand DelegateCommand { get; set; }
 
