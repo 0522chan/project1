@@ -31,23 +31,17 @@ namespace BMI.ViewModel
 
         public double Weight
         {
-            get { return _person.Weight; }
-            set
-            {
-                _person.Weight = value;
-            }
+            get;
+            set;
         }
         public double Tall
         {
-            get { return _person.Tall; }
-            set
-            {
-                _person.Tall = value;
-            }
+            get;
+            set;
         }
         public string Result
         {
-            get { return _person.Result; }
+            get{ return _person.Result; } 
             set
             {
                 _person.Result = value;
