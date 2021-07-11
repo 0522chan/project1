@@ -5,50 +5,57 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows.Input;
-using BMI.Model;
 using BMI.Command;
 
 namespace BMI.ViewModel   
 
 {
     //INotifyPropertyChanged 인터페이스 구현(속성 변경 이벤트)
-    public class Notifier : INotifyPropertyChanged
+    public class Notifier 
+        : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
+        public event 
+            PropertyChangedEventHandler PropertyChanged;
+        protected void 
+            OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                PropertyChanged(this
+                    , new PropertyChangedEventArgs(propertyName));
             }
         }
     }
 
     //코드 알림 속성  
-    public class ConverterViewModel : Notifier
+    public class ConverterViewModel 
+        : Notifier
     {
-        Person _person = new Person();
 
         public double Weight
         {
             get;
             set;
         }
+
         public double Tall
         {
             get;
             set;
         }
+
+        private string result;
         public string Result
         {
-            get{ return _person.Result; } 
+            get { return result; }
             set
             {
-                _person.Result = value;
+                result = value;
                 OnPropertyChanged("Result");
             }
+            
+            
         }
-
 
         private void OnResultChanged()
         {
@@ -75,11 +82,15 @@ namespace BMI.ViewModel
         }
 
         //ICommand 
-        public ICommand DelegateCommand { get; set; }
+        public ICommand DelegateCommand
+        { get; set; }
 
         public ConverterViewModel()
         {
-            DelegateCommand = new Commands(ExecuteMethod, CanExecuteMethod);
+            //DelegateCommand = 
+            // new Commands(ExecuteMethod, CanExecuteMethod);
+            this.DelegateCommand = new Commands<object>
+                (this.ExecuteMethod, this.CanExecuteMethod);
         }
 
         private void ExecuteMethod(object obj)

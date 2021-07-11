@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prism.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,12 +8,14 @@ using System.Windows.Input;
 
 namespace BMI.Command
 {
-    public class Commands : ICommand
+
+    public class Commands<T> : DelegateCommandBase
     {
         Action<object> _executeMethod;
         Func<object, bool> _canexecuteMethod;
 
-        public Commands(Action<object> executeMethod, Func<object, bool> canexecuteMethod)
+        public Commands(Action<object> executeMethod
+            , Func<object, bool> canexecuteMethod)
         {
             this._executeMethod = executeMethod;
             this._canexecuteMethod = canexecuteMethod;
