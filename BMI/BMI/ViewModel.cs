@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows.Input;
-using BMI.Model;
 using BMI.Command;
 
 namespace BMI.ViewModel   
@@ -27,28 +26,31 @@ namespace BMI.ViewModel
     //코드 알림 속성  
     public class ConverterViewModel : Notifier
     {
-        Person _person = new Person();
 
         public double Weight
         {
             get;
             set;
         }
+
         public double Tall
         {
             get;
             set;
         }
+
+        private string result;
         public string Result
         {
-            get{ return _person.Result; } 
+            get { return result; }
             set
             {
-                _person.Result = value;
+                result = value;
                 OnPropertyChanged("Result");
             }
+            
+            
         }
-
 
         private void OnResultChanged()
         {
