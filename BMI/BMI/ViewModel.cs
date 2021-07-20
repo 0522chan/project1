@@ -87,10 +87,9 @@ namespace BMI.ViewModel
 
         public ConverterViewModel()
         {
-            //DelegateCommand = 
-            // new Commands(ExecuteMethod, CanExecuteMethod);
-            this.DelegateCommand = new Commands<object>
-                (this.ExecuteMethod, this.CanExecuteMethod);
+            DelegateCommand = 
+             new Commands(ExecuteMethod, CanExecuteMethod);
+          
         }
 
         private void ExecuteMethod(object obj)
